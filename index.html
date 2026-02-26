@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resultados Reto ENIQ × YASTUBO</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --green:#C8F7D4;
+  --mint:#8BE3B0;
+  --purple:#D9CCFF;
+  --yellow:#FFF3B0;
+  --soft-red:#FFD6D6;
+  --text:#111;
+  --bg:#F6F6FA;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.6;
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:25px 8%;
+}
+
+.logo{
+  font-weight:800;
+  font-size:20px;
+}
+
+nav{
+  display:flex;
+  gap:15px;
+}
+
+nav a{
+  text-decoration:none;
+  padding:8px 16px;
+  border-radius:50px;
+  background:white;
+  font-size:14px;
+  color:#333;
+  border:1px solid #eee;
+}
+
+.hero{
+  padding:80px 8% 60px;
+}
+
+.hero h1{
+  font-size:64px;
+  font-weight:800;
+}
+
+.hero h1 span{
+  display:block;
+  font-family:'Playfair Display', serif;
+  font-style:italic;
+  font-weight:400;
+}
+
+.hero p{
+  margin-top:20px;
+  max-width:600px;
+  font-size:16px;
+  color:#444;
+}
+
+.button-primary{
+  display:inline-block;
+  margin-top:30px;
+  padding:16px 28px;
+  border-radius:40px;
+  background:var(--mint);
+  text-decoration:none;
+  font-weight:600;
+  color:black;
+  transition:.2s ease;
+}
+
+.button-primary:hover{
+  transform:translateY(-3px);
+}
+
+.section{
+  padding:60px 8%;
+}
+
+.section h2{
+  font-size:32px;
+  margin-bottom:30px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(250px,1fr));
+  gap:25px;
+}
+
+.card{
+  padding:30px;
+  border-radius:30px;
+  background:var(--green);
+  font-weight:600;
+  min-height:120px;
+  display:flex;
+  align-items:center;
+}
+
+.card:nth-child(3n){
+  background:var(--purple);
+}
+
+.card:nth-child(2n){
+  background:var(--yellow);
+}
+
+.alert-section{
+  padding:60px 8%;
+}
+
+.alert-box{
+  background:var(--soft-red);
+  padding:50px;
+  border-radius:35px;
+}
+
+.alert-box h3{
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+.alert-box ul{
+  margin-bottom:25px;
+}
+
+.alert-box li{
+  margin-bottom:8px;
+}
+
+.info-section{
+  padding:60px 8%;
+}
+
+.info-section h2{
+  font-family:'Playfair Display', serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:36px;
+  margin-bottom:25px;
+}
+
+.info-section ul{
+  max-width:700px;
+}
+
+.info-section li{
+  margin-bottom:10px;
+}
+
+footer{
+  padding:40px 8%;
+  text-align:center;
+  font-size:14px;
+  color:#777;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  nav{
+    display:none;
+  }
+
+  .hero{
+    padding-top:50px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+}
+.table-container{
+  background:white;
+  padding:30px;
+  border-radius:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+thead{
+  background:#f1f1f8;
+}
+
+th, td{
+  padding:15px;
+  text-align:left;
+}
+
+th{
+  font-weight:600;
+}
+
+tbody tr{
+  border-bottom:1px solid #eee;
+}
+
+tbody tr:last-child{
+  border-bottom:none;
+}
+
+tbody tr:hover{
+  background:#fafafa;
+}
+/* Fila completa verde suave */
+tbody tr:has(.asistio){
+  background-color: #EAF8EF;
+}
+
+/* Opcional: que al pasar el mouse no se dañe el color */
+tbody tr:has(.asistio):hover{
+  background-color: #E0F5E8;
+}
+.next-steps{
+  padding:120px 8%;
+  max-width:900px;
+  margin:auto;
+}
+
+.next-steps h2{
+  font-size:42px;
+  margin-bottom:60px;
+  font-weight:600;
+}
+
+.steps-block{
+  margin-bottom:60px;
+}
+
+.steps-block h3{
+  font-size:22px;
+  margin-bottom:20px;
+  font-weight:600;
+}
+
+.steps-block ul{
+  list-style:none;
+  padding:0;
+}
+
+.steps-block li{
+  margin-bottom:14px;
+  font-size:18px;
+  line-height:1.6;
+}
+
+.steps-block li::before{
+  content:"— ";
+  opacity:0.6;
+}
+
+.note{
+  margin-top:20px;
+  font-size:14px;
+  opacity:0.7;
+}
+
+.divider{
+  height:1px;
+  background:#eee;
+  margin:80px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">ENIQ × YASTUBO</div>
+  <nav>
+    <a href="#">Admitidos</a>
+    <a href="#">Reunión</a>
+    <a href="#">Información</a>
+    <a href="#">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>
+    Resultados Oficiales
+    <span>Reto ENIQ × YASTUBO</span>
+  </h1>
+  <p>
+    Las siguientes personas fueron admitidas pero no han ingresado a la reunión programada con YASTUBO.
+    Es obligatorio asistir para continuar en el reto.
+  </p>
+
+  <a class="button-primary" href="https://calendly.com/cc-yastubo/yastubo-reto" target="_blank">
+    Agendar reunión ahora
+  </a>
+</section>
+
+<section class="section">
+  <h2>Estado de asistencia - Reto ENIQ × YASTUBO</h2>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr><td>Carlos Andres Romero Orduz</td><td><span class="status pendiente">Pendiente reunión</span></td></tr>
+        <tr><td>Samuel Castaño</td><td><span class="status pendiente">Pendiente reunión</span></td></tr>
+        <tr><td>Yamid Gonzalez</td><td><span class="status pendiente">Pendiente reunión</span></td></tr>
+        <tr><td>David Alba</td><td><span class="status pendiente">Pendiente reunión</span></td></tr>
+        <tr><td>Yosimar Naranjo</td><td><span class="status pendiente">Pendiente reunión</span></td></tr>
+        <tr><td>Diego Orlando Bustamante Palomino</td><td><span class="status pendiente">Pendiente reunión</span></td></tr>
+        <tr><td>Miguel Angel Torres Forero</td><td><span class="status pendiente">Pendiente reunión</span></td></tr>
+        <tr><td>Santiago Gamboa</td><td><span class="status pendiente">Pendiente reunión</span></td></tr>
+        <tr><td>Andres Felipe Ramirez Montana</td><td><span class="status pendiente">Pendiente reunión</span></td></tr>
+
+        <tr><td>Juan Duran</td><td><span class="status no-show">No se presentó</span></td></tr>
+        <tr><td>Antonio Rodriguez</td><td><span class="status no-show">No se presentó</span></td></tr>
+        <tr><td>Sebastian Balvin</td><td><span class="status no-show">No se presentó</span></td></tr>
+        <tr><td>Jhonatan Alejandro Solano Mendoza</td><td><span class="status no-show">No se presentó</span></td></tr>
+
+        <tr><td>Santiago Gamboa</td><td><span class="status cancelado">Canceló</span></td></tr>
+        <tr><td>Sebastian Galvis</td><td><span class="status cancelado">Canceló</span></td></tr>
+        <tr><td>Mariana Giraldo</td><td><span class="status cancelado">Canceló</span></td></tr>
+        <tr><td>Jose Miguel Alfaro Castillo</td><td><span class="status cancelado">Canceló</span></td></tr>
+
+        <tr><td>Juan Merchán</td><td><span class="status asistio">Asistió</span></td></tr>
+        <tr><td>Samuel Vargas</td><td><span class="status asistio">Asistió</span></td></tr>
+        <tr><td>Joan Sebastian Rivera Barajas</td><td><span class="status asistio">Asistió</span></td></tr>
+        <tr><td>Daniel Gonzalez</td><td><span class="status asistio">Asistió</span></td></tr>
+        <tr><td>Nicolas Vergara</td><td><span class="status asistio">Asistió</span></td></tr>
+        <tr><td>Juan David Loaiza Reyes</td><td><span class="status asistio">Asistió</span></td></tr>
+        <tr><td>Lucas Niño</td><td><span class="status no-show">No se presentó</span></td></tr>
+        <tr><td>Alejandro Medina</td><td><span class="status asistio">Asistió</span></td></tr>
+        <tr><td>Andrés León</td><td><span class="status asistio">Asistió</span></td></tr>
+        <tr><td>Sebastian Galvis</td><td><span class="status asistio">Asistió</span></td></tr>
+        <tr><td>GEOVANNY BASANTES</td><td><span class="status asistio">Asistió</span></td></tr>
+
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="alert-section">
+  <div class="alert-box">
+    <h3>No hemos podido contactar a estas personas</h3>
+    <ul>
+      <li>Luis Fernando Ushiña</li>
+      <li>Emily Lenis</li>
+      <li>Carlos Camacho</li>
+      <li>Ruben P</li>
+    </ul>
+    <p>
+      Es indispensable que se contacten lo antes posible y agenden su reunión nuevamente.
+    </p>
+    <a class="button-primary" href="https://calendly.com/cc-yastubo/yastubo-reto" target="_blank">
+      Contactar y agendar ahora
+    </a>
+  </div>
+</section>
+
+<section class="info-section">
+  <h2>Información para todos los admitidos</h2>
+  <ul>
+    <li>Todos los admitidos deben agendar la reunión con YASTUBO.</li>
+    <li>La asistencia es obligatoria.</li>
+    <li>Para formar grupos deben entregar la información solicitada durante la reunión.</li>
+    <li>El acceso al grupo oficial se entregará únicamente después de asistir a la reunión.</li>
+  </ul>
+</section>
+<section class="next-steps">
+
+  <h2>Me admitieron, ¿ahora qué?</h2>
+
+  <div class="steps-block">
+    <h3>Necesitamos lo siguiente por grupo</h3>
+    <ul>
+      <li>Usuario de GitHub (aquí compartiremos el código actual).</li>
+      <li>Nombre del equipo.</li>
+      <li>1 representante con la lista completa de integrantes.</li>
+    </ul>
+    <p class="note">
+      Una vez tengan la reunión, pueden formar grupos y enviarnos esta información.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="steps-block">
+    <h3>Después de asistir a la reunión recibirán</h3>
+    <ul>
+      <li>Cuenta para el servidor de pruebas para desplegar aplicaciones.</li>
+      <li>Estructura oficial de la base de datos.</li>
+      <li>Plantilla HTML base para el backend.</li>
+    </ul>
+
+    <p class="note">
+      A medida que avancen y requieran herramientas como OpenAI, Twilio,
+      sandbox de Stripe, Dapta, ElevenLabs, WhatsApp Business o Zoho CRM,
+      nos indican y les generamos las API keys y accesos necesarios.
+    </p>
+  </div>
+
+</section>
+<footer>
+  © 2026 Reto ENIQ × YASTUBO — Todos los derechos reservados
+</footer>
+
+</body>
+</html>
